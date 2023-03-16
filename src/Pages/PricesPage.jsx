@@ -62,9 +62,9 @@ function PricesPage() {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                    {rows.map((row) => (
+                    {rows.map((row, idx) => (
                         <TableRow
-                            key={row.nameService}
+                            key={idx}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                             >
 
@@ -74,7 +74,6 @@ function PricesPage() {
                             <TableCell align="right">{row.service}</TableCell>
                             <TableCell align="right">{row.price} руб</TableCell>
                             <TableCell align="right"><ButtonLink label='Заказать' link='/'/></TableCell>
-                            
                         </TableRow>
                     ))}
                     </TableBody>
