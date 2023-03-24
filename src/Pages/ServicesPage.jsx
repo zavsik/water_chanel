@@ -6,8 +6,6 @@ import Navbar from "../Components/Navbar"
 import image_3 from '../assets/Images/image_3.png'
 import image_4 from '../assets/Images/image_4.png'
 import image_5 from '../assets/Images/image_5.png'
-import image_6 from '../assets/Images/image_6.jpeg'
-
 
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 
@@ -65,6 +63,27 @@ function ServicesPage() {
               </Box>
               <Box>
                 <img src={image_5} alt={"image"} />
+              </Box>
+            </Paper>
+          </Box>
+        </Container>
+
+        <Container>
+          <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: 3 }}>
+            <Paper elevation={3} sx={paperStyle}>
+              <Box>
+                <Typography variant='subtitle1' sx={{ fontWeight: 'bold' }}>
+                  Зачем нужна поверка
+                </Typography>
+                <Typography variant='h6' sx={{ marginTop: 3 }}>
+                  Поверка ИПУ – обязательная процедура. Необходима для контроля правильности работы прибора, и точных расчетов цен на воду.
+                </Typography>
+                <Typography variant='h6' sx={{ marginTop: 3 }}>
+                Необходимость обязательной поверки ИПУ закреплена  ст 13 Федерального закона «Об обеспечении единства измерений» от 26.06.2008 г № 102- ФЗ и постановлением  Правительства РФ № 354 от 06.05.2011
+                </Typography>
+                <Typography variant='h6' sx={{ marginTop: 3 }}>
+                В соответствии с п. 59 Правил предоставления коммунальных услуг собственникам и пользователям помещений в многоквартирных домах и жилых домов, утвержденных постановлением Правительства РФ № 354 от 06.05.2011, показания индивидуальных приборов учета , не прошедших поверку, не могут использоваться для расчета платы за горячую и холодную воду   и  будут выведены из эксплуатации, а для расчетов Вас переведут на повышенный  тариф. 
+                </Typography>
               </Box>
             </Paper>
           </Box>

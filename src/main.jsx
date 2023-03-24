@@ -4,6 +4,8 @@ import HomePage from './Pages/HomePage'
 import ErrorPage from "./Pages/ErrorPage"
 import ServicesPage from './Pages/ServicesPage'
 import PricesPage from './Pages/PricesPage'
+import AdvantagePage from './Pages/AdvantagePage'
+import ProductPage from './Pages/ProductPage'
 import {
   createBrowserRouter,
   RouterProvider,
@@ -12,17 +14,25 @@ import './index.css'
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/water_chanel/",
     element: <HomePage />,
     errorElement: <ErrorPage />,
   },
   {
-    path: "services/",
+    path: "/water_chanel/services/",
     element: <ServicesPage />,
   },
   {
-    path: "prices/",
+    path: "/water_chanel/prices/",
     element: <PricesPage />,
+  },
+  {
+    path: "/water_chanel/advantage/",
+    element: <AdvantagePage />,
+  },
+  {
+    path: "/water_chanel/prices/:id",
+    element: <ProductPage />,
   },
 ])
 

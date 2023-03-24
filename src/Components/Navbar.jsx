@@ -36,17 +36,17 @@ function Navbar() {
                                 +7 (498) 661 5171
                             </Typography>
                             <Typography variant='subtitle1'  sx={{ textAlign: 'center' }}>
-                            Диспетчерская служба работает с 9:00 до 17:00
+                            Сервисно метрологическая служба работает с 9:00 до 17:00
             Онлайн заявка 24/7 (обрабатывается в рабочее время, в приоритетном порядке)
                             </Typography>
                         </Box>
                     </Box>
                     <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                         <ButtonGroup variant="outlined" aria-label="outlined button group" >
-                            <ButtonLink link="/" label='Главная'/>
-                            <ButtonLink link="/services" label='Услуги'/>
-                            <ButtonLink link="/prices" label='Цены'/>
-                            <ButtonLink label='Преимущества'/>
+                            <ButtonLink link="/water_chanel/" label='Главная'/>
+                            <ButtonLink link="/water_chanel/services" label='Услуги'/>
+                            <ButtonLink link="/water_chanel/prices" label='Цены'/>
+                            <ButtonLink link="/water_chanel/advantage" label='Преимущества'/>
                         </ButtonGroup>
                     </Box>
                 </Paper>

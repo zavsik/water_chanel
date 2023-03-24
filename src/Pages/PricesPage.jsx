@@ -1,25 +1,33 @@
+import React, { useRef } from 'react'
 import Container from '@mui/material/Container'
 import Box from '@mui/material/Box'
 import Paper from '@mui/material/Paper'
 import Typography from '@mui/material/Typography'
 import ButtonLink from '../Components/ButtonLink'
 import Navbar from "../Components/Navbar"
-import imageCounter from '../assets/Images/image_counter.png'
+import Button from '@mui/material/Button'
+import Modal from '@mui/material/Modal'
+import TextField from '@mui/material/TextField'
+import emailjs from '@emailjs/browser'
+import InputLabel from '@mui/material/InputLabel'
+import MenuItem from '@mui/material/MenuItem'
+import FormControl from '@mui/material/FormControl'
+import Select from '@mui/material/Select'
+
+import ProductPage from './ProductPage'
 
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
+import Table from '@mui/material/Table'
+import TableBody from '@mui/material/TableBody'
+import TableCell from '@mui/material/TableCell'
+import TableContainer from '@mui/material/TableContainer'
+import TableHead from '@mui/material/TableHead'
+import TableRow from '@mui/material/TableRow'
+import { Outlet, Link, Route } from "react-router-dom"
 
-const imageStyle = {
-    width: '100%',
-    maxWidth: '400px',
-    height: 'auto'
-  }
+
+<Route path="contacts/:id" element={<ProductPage />} />
 
 const theme = createTheme({
     typography: {
@@ -31,9 +39,28 @@ const theme = createTheme({
     },
   })
 
-  function createData(nameService, service, price, button) {
-    return { nameService, service, price, button }
+  function createData( nameService, service, price, button) {
+    return {  nameService, service, price, button }
   }
+
+  const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    borderRadius: 3,
+    bgcolor: 'background.paper',
+    boxShadow: 20,
+    pt: 2,
+    px: 4,
+    pb: 3,
+  };
+const buttonStyle = {
+    width: 'max-content',
+}
+const linkStyle = {
+  
+}
 
   const rows = [
     createData('Поверка', 'Поверка одного счетчика воды без снятия на дому', 840, ButtonLink),
@@ -48,6 +75,20 @@ const theme = createTheme({
   ]
 
 function PricesPage() {
+  const form = useRef()
+
+  const [open, setOpen] = React.useState(false)
+
+  const [age, setAge] = React.useState('')
+
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
+
+  const handleOpen = () => {
+    setOpen(true);
+  }
+
   return (
     <ThemeProvider theme={theme}>
       <Navbar />
@@ -73,7 +114,11 @@ function PricesPage() {
                         </TableCell>
                             <TableCell align="right">{row.service}</TableCell>
                             <TableCell align="right">{row.price} руб</TableCell>
-                            <TableCell align="right"><ButtonLink label='Заказать' link='/'/></TableCell>
+                            <TableCell align="right"><Link to={{
+                             pathname: `/water_chanel/prices/${idx}`,
+                             state: { vbbnvvnb: 'mystate' }
+                            }}
+                             underline='none' style={{ textDecoration: 'none', margin: 2 }}><Button size='small'  sx={buttonStyle}>Заказать</Button></Link></TableCell>
                         </TableRow>
                     ))}
                     </TableBody>
@@ -85,3 +130,6 @@ function PricesPage() {
 }
 
 export default PricesPage
+
+
+

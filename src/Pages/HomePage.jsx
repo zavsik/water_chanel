@@ -6,7 +6,8 @@ import ButtonLink from '../Components/ButtonLink'
 import Navbar from "../Components/Navbar"
 import imageCounter from '../assets/Images/image_counter.png'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
-
+import main_image from '../assets/Images/image_main.png'
+import work_image from '../assets/Images/image_work.jpg'
 
 const imageStyle = {
   width: '100%',
@@ -36,15 +37,27 @@ function HomePage() {
                 Поверка приборов учета воды
                 </Typography>
                 <Typography variant='h6' sx={{ marginTop: 3 }}>
-                Прямая услуга от поставщика ресурсов
-Нашему Абоненту теперь не нужно нести акт о поверки, акт КСП в управляющую компанию или расчётный центр, мы сами внесем данные в реестр ФГИС «Аршин» и направим их в базу МосОблЕИРЦ.
+                Прямая услуга от поставщика ресурсов.
+Нашему Абоненту теперь не нужно нести акт о поверки, мы сами внесем данные в реестр ФГИС «Аршин» и направим их в базу МосОблЕИРЦ.
                 </Typography>
-                <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: 2 }}>
-                  <ButtonLink label='Посмотреть цены' link='/prices'/>
+                <Box sx={{ display: 'flex', marginTop: 3 }}>
+                  <ButtonLink label='Посмотреть цены' link='/water_chanel/prices'/>
                 </Box>
               </Box>
               <Box >
-                <img src={imageCounter} alt='logo' style={imageStyle} />
+              <img src={main_image} alt='image' style={imageStyle} />
+              </Box>
+            </Paper>
+          </Box>
+        </Container>
+        <Container maxWidth='lg'>
+          <Box sx={{ marginTop: 3 }}>
+            <Paper elevation={3} sx={{padding: 5}}>
+              <Box sx={{ display: 'flex', justifyContent: 'center'}}>
+                <Typography variant='h5'>
+                  Поверка приборов учета воды от
+                </Typography>
+                <Typography variant='h5' sx={{marginLeft: 1}} color='red'>840р</Typography>
               </Box>
             </Paper>
           </Box>
